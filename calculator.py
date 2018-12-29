@@ -5,10 +5,20 @@ import time
 op = ""
 num1 = ""
 num2 = ""
+name = ""
+path = './name.txt'
+
+if name == "":
+    print("Welcome, please enter your name")
+    name = input("")
+    file = open("name.txt", "w")
+    file.write(name)
+    file.close()
 
 
 def calc():
-    print("welcome to advanced calculator")
+    file = open("name.txt", "r")
+    print("welcome", name, "to advanced calculator")
     print("first select the operation: +, *, -, power, squareroot, tan, areacircle, pythagorean, rectvol")
     op = input("")
     if op == "+":
