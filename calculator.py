@@ -10,7 +10,7 @@ name = ""
 file = open("name.txt", "w+")
 file.close() 
 file = open("name.txt", "r")
-name = file.readline()
+name = file.read()
 file.close() 
 
 hist = open("hist.txt", "w+")
@@ -34,8 +34,8 @@ def calc():
         num2 = int(input())
         result = num1 + num2
         print(result)
-        hist = str(num1), str(num2), str(result)
         file = open("hist.txt", 'w+')
+        file.write("\n")
         file.write(str(num1)+"+")
         file.write(str(num2)+"=")
         file.write(str(result))
@@ -47,7 +47,14 @@ def calc():
         num1 = int(input())
         print("now select value 2")
         num2 = int(input())
-        print(num1 * num2)
+        result = num1 + num2
+        print(result)
+        file = open("hist.txt", 'w+')
+        file.write("\n")
+        file.write(str(num1)+"*")
+        file.write(str(num2)+"=")
+        file.write(str(result))
+        file.close()
         time.sleep(5)
         calc()
     elif op == "-":
@@ -55,7 +62,14 @@ def calc():
         num1 = int(input())
         print("now select value 2")
         num2 = int(input())
-        print(num1 - num2)
+        result = num1 - num2
+        print(result)
+        file = open("hist.txt", 'w+')
+        file.write("\n")
+        file.write(str(num1)+"*")
+        file.write(str(num2)+"=")
+        file.write(str(result))
+        file.close()
         time.sleep(5)
         calc()
     elif op == "power":
