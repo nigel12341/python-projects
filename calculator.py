@@ -6,18 +6,24 @@ op = ""
 num1 = ""
 num2 = ""
 name = ""
-path = './name.txt'
+
+file = open("name.txt", "w+")
+file.close() 
+file = open("name.txt", "r")
+name = file.readline()
+file.close() 
+
+hist = open("hist.txt", "w+")
+hist.close
 
 if name == "":
     print("Welcome, please enter your name")
     name = input("")
-    file = open("name.txt", "w")
+    file = open("name.txt", "w+")
     file.write(name)
     file.close()
 
-
 def calc():
-    file = open("name.txt", "r")
     print("welcome", name, "to advanced calculator")
     print("first select the operation: +, *, -, power, squareroot, tan, areacircle, pythagorean, rectvol")
     op = input("")
@@ -26,15 +32,14 @@ def calc():
         num1 = int(input())
         print("now select value 2")
         num2 = int(input())
-        print(num1 + num2)
-        time.sleep(5)
-        calc()
-    elif op == "*":
-        print("now select value 1")
-        num1 = int(input())
-        print("now select value 2")
-        num2 = int(input())
-        print(num1 * num2)
+        result = num1 + num2
+        print(result)
+        hist = str(num1), str(num2), str(result)
+        file = open("hist.txt", 'w+')
+        file.write(str(num1)+"+")
+        file.write(str(num2)+"=")
+        file.write(str(result))
+        file.close()
         time.sleep(5)
         calc()
     elif op == "*":
