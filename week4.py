@@ -1,9 +1,5 @@
 import math #Hier word de math library geimporteerd
 
-
-#Dit script is een gemodificeerde versie van mijn calculator https://github.com/nigel12341/python-projects/blob/master/calculator.py samen met week2 en week3 van de python opdrachten
-
-
 op = "" #Komende regels wat variabelen
 num1 = ""
 num2 = ""
